@@ -1,1 +1,1 @@
-# Transforming-the-Transformer-for-Detecting-Hatred-using-Multimodality
+# Attentive Fusion: A Transformer-based Approach to Multimodal Hate Speech Detection
