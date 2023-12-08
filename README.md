@@ -8,3 +8,5 @@ Attentive Fusion is a layer designed to Fuse the output of Multimodal Data for C
 
 
 ![Hate-Speech-Detection](https://github.com/atanumandal0491/Attentive-Fusion/assets/31398278/67be872d-a74c-49d6-ac53-c1ecbdf63398)
+
+Updated on 08 December 2023
