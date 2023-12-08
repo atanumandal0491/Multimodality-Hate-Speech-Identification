@@ -4,7 +4,7 @@ from encoder import Encoder
 from decoder import Decoder
 from pre import Speech_Sampling, Text_Sampling
 
-class WhisperClassifierGenerator(tf.keras.models.Model):
+class WhispeClassifierGenerator(tf.keras.models.Model):
   def __init__(self, num_layers, d_model, num_heads, dff, input_vocab_size, target_vocab_size, num_classes, dropout_rate, **kwargs):
     super(WhisperClassifierGenerator, self).__init__()
 
