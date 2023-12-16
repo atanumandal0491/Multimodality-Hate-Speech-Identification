@@ -35,7 +35,7 @@ class CausalSelfAttention(BaseAttention):
     return x
 
 class Attentive_Fusion(tf.keras.layers.Layer):
-  def __init__(self, num_dim, name="Hybrid Attention", **kwargs):
+  def __init__(self, num_dim, name="Attentive Fusion", **kwargs):
     super(Attentive_Fusion, self).__init__()
     self.num_dim = num_dim
     self.wq = tf.keras.layers.Dense(num_dim)
