@@ -34,3 +34,20 @@ class CausalSelfAttention(BaseAttention):
     x = self.layernorm(x)
     return x
 
+class Attentive_Fusion(tf.keras.layers.Layer):
+  def __init__(self, num_dim, name="Hybrid Attention", **kwargs):
+    super(Attentive_Fusion, self).__init__()
+    self.num_dim = num_dim
+    self.wq = tf.keras.layers.Dense(num_dim)
+    self.wk = tf.keras.layers.Dense(num_dim)
+
+  def call(self, x1, x2):
+    q = self.wq(x1)
+    k = self.wk(x2)
+    qk = tf.linalg.matmul(q, k, transpose_a=False, transpose_b=True)
+    weights = tf.math.exp(tf.math.tanh(qk))
+
+    weights /= tf.cast(tf.math.reduce_sum(weights, axis=1, keepdims=True) + tf.keras.backend.epsilon(), dtype=tf.float32)
+    weights = weights * qk
+    weights = tf.math.reduce_sum(weights, axis=1)
+    return weights
